@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import hanger from '../assets/Screenshot_2026-04-09_at_6.50.41_AM-removebg-preview (1) (1).png'
 import hanger2 from '../assets/hanger.png'
 
 const Calendar = () => {
