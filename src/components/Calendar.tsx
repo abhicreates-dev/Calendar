@@ -105,8 +105,35 @@ const Calendar = () => {
       ? `Notes for ${startDate.toLocaleDateString('default', { month: 'short', day: 'numeric', year: 'numeric' })}...`
       : `Notes for ${startDate?.toLocaleDateString('default', { month: 'short', day: 'numeric' })} - ${endDate?.toLocaleDateString('default', { month: 'short', day: 'numeric', year: 'numeric' })}...`;
 
+const monthImages = [
+  "https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=1600&q=80",
+  "https://images.unsplash.com/photo-1478265409131-1f65c88f965c?auto=format&fit=crop&w=1600&q=80",
+  "https://images.unsplash.com/photo-1462206092226-f46025ffe607?auto=format&fit=crop&w=1600&q=80",
+
+"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80",
+
+  "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1600&q=80",
+  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80",
+  "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1600&q=80",
+
+  // 8 (fixed)
+  "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+
+  // 9 (fixed)
+  "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80",
+
+  "https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&w=1600&q=80",
+
+  // 11 (fixed)
+  "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=1600&q=80",
+
+  // 12 (fixed)
+  "https://media.licdn.com/dms/image/v2/D4D22AQFk7PuyyW0Uwg/feedshare-shrink_800/feedshare-shrink_800/0/1701088274772?e=2147483647&v=beta&t=AhC_Siu3shOk-VBco64U54Z4Q4mIfIzQWKCEiNu9uTA"
+];
+  const activeImage = monthImages[currentDate.getMonth()];
+
   return (
-    <div className="w-full max-w-[860px] mx-auto relative flex items-center justify-center py-6 px-4 lg:px-0">
+    <div className="w-full max-w-[860px] mx-auto relative flex items-center justify-center py-6 px-4 lg:px-0 ">
       <div className='absolute z-999  top-3 md:top-1 lg:top-1 max-w-[800px] w-[calc(100%-2rem)] lg:w-full flex justify-center pointer-events-none'>
         <img src={hanger2} alt="" className="max-w-full object-contain" />
       </div>
@@ -122,26 +149,26 @@ const Calendar = () => {
       </div>
       
       <div className="w-full max-w-[800px] bg-white shadow-[-20px_10px_100px_rgba(0,0,0,0.5)] overflow-hidden font-sans relative">
- <svg
-        viewBox="0 0 800 630"
-        className="w-full h-auto"
-        preserveAspectRatio="xMidYMid slice"
-      >
-        {/* IMAGE PATTERN */}
-        <defs>
-          <pattern
-            id="imgPattern"
-            patternUnits="userSpaceOnUse"
-            width="800"
-            height="630"
-          >
-            <image
-              href="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=1600&q=80"
-              width="800"
-              height="630"
+            <svg
+              viewBox="0 0 800 630"
+              className="w-full h-auto"
               preserveAspectRatio="xMidYMid slice"
-            />
-          </pattern>
+            >
+              {/* IMAGE PATTERN */}
+              <defs>
+                <pattern
+                  id="imgPattern"
+                  patternUnits="userSpaceOnUse"
+                  width="800"
+                  height="630"
+                >
+                  <image
+                    href={activeImage}
+                    width="800"
+                    height="630"
+                    preserveAspectRatio="xMidYMid slice"
+                  />
+                </pattern>
         </defs>
 
         {/* IMAGE SHAPE */}
